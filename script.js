@@ -6,3 +6,4 @@ let fullPrice;
 let adaptive;
 
 alert("Hello World");
+console.log("Hello World");
