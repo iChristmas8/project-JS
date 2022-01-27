@@ -4,4 +4,6 @@ let screenPrice;
 let rollback;
 let fullPrice;
 let adaptive;
-// Переменные для домашнего задания
+
+alert("Hello World");
+console.log("Hello World");
