@@ -1,3 +1,4 @@
+'use strict';
 let title = "project-JS";
 let screens = "Простые, Сложные, Интерактивные";
 let screenPrice = 20;
@@ -12,3 +13,4 @@ console.log(screens.length);
 console.log(`Стоимость верстки экранов ${screenPrice} рублей, Стоимость разработки сайта ${fullPrice} рублей`);
 console.log(screens.toLowerCase().split(", "));
 console.log(fullPrice * (rollback/100));
+
