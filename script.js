@@ -2,7 +2,7 @@
 let title = prompt("Как называется Ваш проект?");
 let screens = prompt("Какие типы экранов нужно разработать? (пример: 'Простые, Сложные, Интерактивные')");
 let screenPrice = +prompt("Сколько будет стоить данная работа?");
-let rollback = 80;
+let rollback = 10;
 let adaptive = confirm("Нужен ли адаптив на сайте?");
 let service1 = prompt("Какой дополнительный тип услуги нужен?");
 let servicePrice1 = +prompt("Сколько это будет стоить?");
@@ -13,7 +13,7 @@ let servicePrice2 = +prompt("Сколько это будет стоить?");
 let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 console.log(fullPrice);
 
-let servicePercentPrice = Math.ceil(fullPrice * (rollback/100));
+let servicePercentPrice = Math.ceil(fullPrice - rollback);
 console.log(servicePercentPrice);
 
 
