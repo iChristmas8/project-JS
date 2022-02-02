@@ -2,7 +2,7 @@
 let title = prompt("Как называется Ваш проект?");
 let screens = prompt("Какие типы экранов нужно разработать? (пример: 'Простые, Сложные, Интерактивные')");
 let screenPrice = +prompt("Сколько будет стоить данная работа?");
-let rollback = 15;
+let rollback = 10;
 let adaptive = confirm("Нужен ли адаптив на сайте?");
 let service1 = prompt("Какой дополнительный тип услуги нужен?");
 let servicePrice1 = +prompt("Сколько это будет стоить?");
@@ -60,3 +60,4 @@ showTypeOf(adaptive);
 console.log(getRollbackMessage(fullPrice));
 console.log(screens.toLowerCase().split(", "));
 console.log("Стоимость разработки сайта " + servicePercentPrice + " рублей");
+console.log(getServicePercentPrices(servicePercentPrice));
