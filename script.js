@@ -1,13 +1,13 @@
 'use strict';
-let title = prompt("Как называется Ваш проект?");
-let screens = prompt("Какие типы экранов нужно разработать? (пример: 'Простые, Сложные, Интерактивные')");
-let screenPrice = +prompt("Сколько будет стоить данная работа?");
+let title = prompt("Как называется Ваш проект?", "Калькулятор верстки");
+let screens = prompt("Какие типы экранов нужно разработать?", "Простые, Сложные, Интерактивные");
+let screenPrice = +prompt("Сколько будет стоить данная работа?", "5000");
 let rollback = 10;
 let adaptive = confirm("Нужен ли адаптив на сайте?");
-let service1 = prompt("Какой дополнительный тип услуги нужен?");
-let servicePrice1 = +prompt("Сколько это будет стоить?");
-let service2 = prompt("Какой дополнительный тип услуги нужен?");
-let servicePrice2 = +prompt("Сколько это будет стоить?");
+let service1 = prompt("Какой дополнительный тип услуги нужен?", "Слайдер");
+let servicePrice1 = +prompt("Сколько это будет стоить?", "1000");
+let service2 = prompt("Какой дополнительный тип услуги нужен?", "Анимация");
+let servicePrice2 = +prompt("Сколько это будет стоить?", "500");
 let allServicePrices;
 let fullPrice;
 let servicePercentPrice;
@@ -38,9 +38,10 @@ function getFullPrice() {
     return screenPrice + allServicePrices;        //Function Declaration (Объявление Функции)
 }
 
-function getTitle(string) {
-  return string.trim().charAt(0).toUpperCase() + string.slice(1);
-}
+let getTitle = function(string){
+  string.trim();
+  return string.charAt(0).toUpperCase(0) + string.slice(1);
+};
 
 function getServicePercentPrices(rollback) {
     return fullPrice - (fullPrice * (rollback / 100));
@@ -49,7 +50,7 @@ function getServicePercentPrices(rollback) {
 
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
-title = getTitle(title);
+console.log(getTitle(title));
 servicePercentPrice = getServicePercentPrices(rollback);
 showTypeOf(title);
 showTypeOf(fullPrice);
@@ -60,4 +61,3 @@ showTypeOf(adaptive);
 console.log(getRollbackMessage(fullPrice));
 console.log(screens.toLowerCase().split(", "));
 console.log("Стоимость разработки сайта " + servicePercentPrice + " рублей");
-console.log(getServicePercentPrices(servicePercentPrice));
