@@ -38,10 +38,10 @@ function getFullPrice() {
     return screenPrice + allServicePrices;        //Function Declaration (Объявление Функции)
 }
 
-let getTitle = function(string){
-  string = string.trim().toLowerCase();
-  return string.charAt(0).toUpperCase(0) + string.slice(1);
-};
+let getTitle = function() {
+    title = title.trim().toLowerCase();
+    return title = title[0].toUpperCase() + title.slice(1);
+}
 
 function getServicePercentPrices(rollback) {
     return fullPrice - (fullPrice * (rollback / 100));
@@ -50,9 +50,9 @@ function getServicePercentPrices(rollback) {
 
 allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
-console.log(getTitle(title));
 servicePercentPrice = getServicePercentPrices(rollback);
-showTypeOf(title.trim().toUpperCase(0).toLowerCase());
+getTitle();
+showTypeOf(title);
 showTypeOf(fullPrice);
 showTypeOf(adaptive);
 
