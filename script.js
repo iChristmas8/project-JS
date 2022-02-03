@@ -39,7 +39,7 @@ function getFullPrice() {
 }
 
 let getTitle = function(string){
-  string.trim();
+  string = string.trim().toLowerCase();
   return string.charAt(0).toUpperCase(0) + string.slice(1);
 };
 
