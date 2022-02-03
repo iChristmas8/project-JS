@@ -52,7 +52,7 @@ allServicePrices = getAllServicePrices();
 fullPrice = getFullPrice();
 console.log(getTitle(title));
 servicePercentPrice = getServicePercentPrices(rollback);
-showTypeOf(title);
+showTypeOf(title.trim().toUpperCase(0).toLowerCase());
 showTypeOf(fullPrice);
 showTypeOf(adaptive);
 
