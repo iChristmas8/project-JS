@@ -41,7 +41,7 @@ function getFullPrice() {
 let getTitle = function() {
     title = title.trim().toLowerCase();
     return title = title[0].toUpperCase() + title.slice(1);
-}
+};
 
 function getServicePercentPrices(rollback) {
     return fullPrice - (fullPrice * (rollback / 100));
