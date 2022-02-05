@@ -10,6 +10,7 @@ let fullPrice;
 let servicePercentPrice;
 let service1;
 let service2;
+let price;
 
 const isNumber = function(num) {
     return !isNaN(parseFloat(num)) && isFinite(num);
@@ -37,14 +38,10 @@ let getAllServicePrices = function() {
             service2 = prompt("Какой дополнительный тип услуги нужен?", "Анимация");
         }
 
-        let price = +prompt("Сколько это будет стоить?");
+    do {
+        price = +prompt("Сколько будет стоить данная работа?");
+    } while (!isNumber(price));
         
-        if(isNumber(price)) {
-            sum += price;
-        } else {
-            price = +prompt("Сколько это будет стоить?");
-            sum += price;
-        }
     }
 
     return sum;         
