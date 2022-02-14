@@ -1,111 +1,42 @@
-'use strict';
+"use strict";
 
-const appData = {
-    title: '',
-    screens: [],
-    screenPrice: 0,
-    adaptive: true,
-    rollback: 10,
-    allServicePrices: 0,
-    fullPrice: 0,
-    servicePercentPrice: 0,
-    services: {},
-    start: function () {
-        appData.asking();
-        appData.appPrices();
-        appData.getFullPrice();
-        appData.getServicePercentPrices();
-        appData.getTitle();
+const boo = document.querySelectorAll(".book");
+boo[1].after(boo[0]);
+boo[0].after(boo[4]);
+boo[5].after(boo[2]);
 
-        appData.logger();
-    },
-    isNumber: function(num) {
-        return !isNaN(parseFloat(num) && isFinite(num));
-    },
-    asking: function() {
+const back = document.querySelector("body");
+back.style.backgroundImage = "url(./image/you-dont-know-js.jpg)";
 
-        do {
-            appData.title = prompt("Как называется Ваш проект?", "Калькулятор верстки");
-        } while (typeof(appData.title) != 'string' || appData.isNumber(appData.title));
-        
-        for (let i = 0; i < 2; i++) {
-            let name;
-            do {
-                name = prompt("Какие типы экранов нужно разработать?");
-                } while (typeof(name) != 'string' || appData.isNumber(name));
-            let price = 0;
-        
-            do {
-                price = +prompt("Сколько будет стоить данная работа?");
-                } while (!appData.isNumber(price));
+const title2 = document.querySelectorAll("h2")[2];
+title2.textContent = "Книга 3. this и Прототипы Объектов";
+title2.style.color = "darkkhaki";
 
-                appData.screens.push({id: i, name: name, price: price});
+const adv = document.querySelector(".adv");
+adv.remove();
 
-                console.log('Как называется ваш проект?', typeof appData.title);
-                console.log('Какие типы экранов нужно разработать?', typeof name);
-                console.log('Сколько будет стоить данная работа?', typeof price);
-        }
+const ul2 = document.querySelectorAll("ul")[1];
+console.log(ul2);
+const list2 = ul2.querySelectorAll("li");
+console.log(list2);
+list2[3].after(list2[6]);
+list2[6].after(list2[8]);
+list2[9].after(list2[2]);
 
-        for (let i = 0; i < 2; i++) {
-            let name;
-            let price = 0;
+const ul5 = document.querySelectorAll("ul")[4];
+console.log(ul5);
+const list5 = ul5.querySelectorAll("li");
+console.log(list5);
+list5[1].after(list5[9]);
+list5[9].after(list5[3]);
+list5[3].after(list5[4]);
+list5[7].after(list5[5]);
 
-            do {
-                name = prompt("Какой дополнительный тип услуги нужен?");
-            } while (typeof(name) != 'string' || appData.isNumber(name));
+const ul6 = document.querySelectorAll("ul")[5];
+console.log(ul6);
+const list6 = ul6.querySelectorAll("li");
+console.log(list6);
 
-            do {
-                price = +prompt("Сколько это будет стоить?");
-            } while (!appData.isNumber(price));
-        
-            appData.services[name] = +price;
-
-            console.log('Какой дополнительный тип услуги нужен?', typeof name);
-            console.log('Сколько это будет стоить?', typeof price);
-    }
-    
-        appData.adaptive = confirm("Нужен ли адаптив на сайте?");
-    },
-
-    appPrices: function() {
-        for(let screen of appData.screens) {
-            appData.screenPrice += +screen.price;
-        }
-
-        for(let key in appData.services) {
-            appData.allServicePrices += appData.services[key];
-        }
-    },
-
-    getFullPrice: function() {
-     appData.fullPrice = appData.screenPrice + appData.allServicePrices;        
-    },
-
-    getTitle: function() {
-    appData.title = appData.title.trim()[0].toUpperCase() + appData.title.trim().substring(1).toLowerCase();
-    },
-
-    getServicePercentPrices: function() {
-     appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback / 100));
-    },
-
-    getRollbackMessage: function(price) {
-        if(price >= 30000) {
-            return "Даем скидку в 10%";
-        } else if (price >= 15000 && price < 30000) {
-            return "Даем скидку в 5%";
-        } else if (price < 15000 && price >= 0) {
-            return  "Скидка не предусмотрена";
-        } else if (price < 0) {
-            return "Что то пошло не так";
-        }
-    },
-
-    logger: function () {
-        console.log(appData.fullPrice);
-        console.log(appData.servicePercentPrice);
-        console.log(appData.screens);
-    }
-};
-
-appData.start();
+const newList6 = document.createElement("li");
+newList6.textContent = "Глава 8: За пределами ES6";
+list6[8].append(newList6);
