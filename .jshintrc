@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 	"camelcase" : true,
 	"indent": 2,
@@ -12,4 +13,20 @@
 	"jquery": true,
 	"esversion": 6,
 	"node": true
+=======
+{
+	"camelcase" : true,
+	"indent": 2,
+	"undef": true,
+	"quotmark": false,
+	"maxlen": 120,
+	"trailing": true,
+	"curly": true,
+	"strict": false,
+	"browser": true,
+	"devel": true,
+	"jquery": true,
+	"esversion": 6,
+	"node": true
+>>>>>>> 86c573002bfa07d9bed1c7bb0360038a97c9bc77
 }
